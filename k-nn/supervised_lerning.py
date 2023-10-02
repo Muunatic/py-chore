@@ -35,7 +35,7 @@ for i in range(10):
 plt.show()
 
 distances, neighbors = knn.radius_neighbors(test_face.reshape(1, -1), radius=100.0)
-sd, sd_arg= np.sort(distances[0]), np.argsort (distances[0])
+sd, sd_arg= np.sort(distances[0]), np.argsort(distances[0])
 
 fig, ax = plt.subplots(2, 10, figsize=(18, 4))
 

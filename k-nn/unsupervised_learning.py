@@ -6,7 +6,7 @@ from scipy.misc import face
 from skimage.transform import resize
 
 from sklearn.cluster import KMeans
-np.random.seed (1068)
+np.random.seed(1068)
 
 square_fragment_size = 2
 n_qvectors = 24
@@ -41,7 +41,7 @@ for i in range(0, 192, square_fragment_size):
     for j in range(0, 256, square_fragment_size): qv_picture[i:i + square_fragment_size, j:j + square_fragment_size, :] = km.cluster_centers_[qvs[idx]].reshape((square_fragment_size, square_fragment_size, 3))
     idx += 1
 
-fig, ax = plt.subplots (figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(8, 6))
 ax.imshow(qv_picture)
 ax.grid(False)
 plt.show()
