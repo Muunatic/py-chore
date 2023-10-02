@@ -12,11 +12,11 @@ square_fragment_size = 2
 n_qvectors = 24
 
 if __name__ == '__main__':
-  print('Starting')
+    print('Starting')
 
 picture = resize(face (gray=False), output_shape=(192, 256), mode='reflect')
 sns.set()
-fig, ax = plt.subplots (figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(8, 6))
 ax.imshow(picture)
 ax.grid(False)
 
@@ -72,6 +72,6 @@ p_original = hist_original / np.sum(hist_original)
 H_original = -np.sum(p_original * np.log2(p_original + 1e-8))
 
 p_q = hist_q / np.sum(hist_q)
-H_q= np.sum(p_q * np.log2(p_q + 1e-8))
+H_q = np.sum(p_q * np.log2(p_q + 1e-8))
 
 print('Original entropy: {0:.3f} bits - Quantized entropy: {1:.3f} bits'.format(H_original, H_q))

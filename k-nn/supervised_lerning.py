@@ -26,7 +26,7 @@ distances, neighbors = knn.kneighbors(test_face.reshape(1, -1))
 fig, ax = plt.subplots(1, 10, figsize=(18, 8))
 
 for i in range(10):
-    idx= neighbors[0][i]
+    idx = neighbors[0][i]
     ax[i].imshow(X[idx].reshape((64, 64))* 255.0, cmap='gray')
     ax[i].grid(False)
     ax[i].set_xticks([])
@@ -35,7 +35,7 @@ for i in range(10):
 plt.show()
 
 distances, neighbors = knn.radius_neighbors(test_face.reshape(1, -1), radius=100.0)
-sd, sd_arg= np.sort(distances[0]), np.argsort(distances[0])
+sd, sd_arg = np.sort(distances[0]), np.argsort(distances[0])
 
 fig, ax = plt.subplots(2, 10, figsize=(18, 4))
 
