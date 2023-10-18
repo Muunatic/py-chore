@@ -6,7 +6,7 @@ from scipy.misc import face
 from skimage.transform import resize
 
 from sklearn.cluster import KMeans
-np.random.seed(1068)
+np.random.seed(1000)
 
 square_fragment_size = 2
 n_qvectors = 24
@@ -14,7 +14,7 @@ n_qvectors = 24
 if __name__ == '__main__':
     print('Starting')
 
-picture = resize(face (gray=False), output_shape=(192, 256), mode='reflect')
+picture = resize(face(gray=False), output_shape=(192, 256), mode='reflect')
 sns.set()
 fig, ax = plt.subplots(figsize=(8, 6))
 ax.imshow(picture)
@@ -47,12 +47,12 @@ ax.grid(False)
 plt.show()
 
 fig, ax = plt.subplots(2, 3, figsize=(18, 8), sharex=True, sharey=True)
-sns.distplot(picture[:, :, 0]. flatten() / 255.0, kde=True, bins=32, ax=ax[0, 0], color='r')
-sns.distplot(picture[:, :, 1]. flatten() / 255.0, kde=True, bins=32, ax=ax [0, 1], color='g')
-sns.distplot(picture[:, :, 2]. flatten() / 255.0, kde=True, bins=32, ax=ax[0, 2], color='b')
+sns.distplot(picture[:, :, 0].flatten() / 255.0, kde=True, bins=32, ax=ax[0, 0], color='r')
+sns.distplot(picture[:, :, 1].flatten() / 255.0, kde=True, bins=32, ax=ax[0, 1], color='g')
+sns.distplot(picture[:, :, 2].flatten() / 255.0, kde=True, bins=32, ax=ax[0, 2], color='b')
 
 sns.distplot(qv_picture[:, :, 0].flatten() / 255.0, kde=True, bins=32, ax=ax[1, 0], color='r')
-sns.distplot(qv_picture[:, :, 1]. flatten() / 255.0, kde=True, bins=32, ax=ax[1, 1], color='g')
+sns.distplot(qv_picture[:, :, 1].flatten() / 255.0, kde=True, bins=32, ax=ax[1, 1], color='g')
 sns.distplot(qv_picture[:, :, 2].flatten() / 255.0, kde=True, bins=32, ax=ax[1, 2], color='b')
 
 ax[0, 1].set_title('Original image', fontsize=14)
